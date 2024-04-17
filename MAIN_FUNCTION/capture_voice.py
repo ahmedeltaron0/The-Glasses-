@@ -20,4 +20,4 @@ def get_audio(lang='ar'):
         print(f"Could not request results from Google Speech Recognition service; {e}")
         return ""
     
-get_audio()
+get_audio() 

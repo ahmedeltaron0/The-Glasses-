@@ -7,7 +7,7 @@ from dotenv import dotenv_values
 
 GEMINI_KEY = dotenv_values('.env').get('gemini_api')
 
-genai.configure(api_key=os.getenv(GEMINI_KEY) or GEMINI_KEY)
+genai.configure(api_key=os.getenv("AIzaSyCHyeW-T_9nEo8H3NMiaCcqcZHn0Stq1pE") or "AIzaSyCHyeW-T_9nEo8H3NMiaCcqcZHn0Stq1pE")
 
 model =  genai.GenerativeModel("gemini-pro")
 vision_model = genai.GenerativeModel("models/gemini-pro-vision")
@@ -22,7 +22,7 @@ def gemini_response(query):
     return ar_translated_rsponse
 
 
-def gemini_vision_response(img, question = 'Describe this image'):
+def gemini_vision_response(img, question = 'How much money is in this project?'):
     # response = vision_model.generate_content(Image.fromarray(img))  # simply pass the image
     # print(response.text)
     # #Output:
@@ -39,4 +39,4 @@ def gemini_vision_response(img, question = 'Describe this image'):
     
     return ar_translated_rsponse
 
-# gemini_vision_response(snapshot())
+gemini_vision_response(snapshot())
